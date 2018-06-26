@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Android_Assets_Utility"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="590">
+        Title="Android Assets Utility" Height="450" Width="600">
     <Grid>
         <StackPanel Orientation = "Vertical">
             <!-- set project directory and environemnt -->
@@ -17,8 +17,14 @@
             <!-- Make launcher icons -->
             <TextBlock Grid.Row = "0" Grid.Column = "4" Text = "Icon Launcher Folder" Margin = "10" HorizontalAlignment = "Left" VerticalAlignment = "Center" />
             <StackPanel Orientation = "Horizontal">
-                <TextBlock x:Name="txtBoxName2"  Grid.Row = "0" Grid.Column = "3" Margin="10,0,10,0" Width="400" Background="PaleTurquoise"/>
+                <TextBox x:Name="txtBoxName2"  Grid.Row = "0" Grid.Column = "3" Margin="10,0,10,0" Width="400" Background="PaleTurquoise"/>
                 <Button x:Name="make_launcher_icons" Content="Build icons" Click="Make_Launcher_Icons" Background = "AntiqueWhite" Width="150" Margin="0,0,10,0"/>
+            </StackPanel>
+            <!-- Make round launcher icons -->
+            <TextBlock Grid.Row = "0" Grid.Column = "4" Text = "Round Icon Launcher Folder" Margin = "10" HorizontalAlignment = "Left" VerticalAlignment = "Center" />
+            <StackPanel Orientation = "Horizontal">
+                <TextBox x:Name="txtBoxName2b"  Grid.Row = "0" Grid.Column = "3" Margin="10,0,10,0" Width="400" Background="PaleTurquoise"/>
+                <Button x:Name="make_round_launcher_icons" Content="Build icons" Click="Make_Round_Launcher_Icons" Background = "AntiqueWhite" Width="150" Margin="0,0,10,0"/>
             </StackPanel>
             <!-- Make multiple density drawable -->
             <TextBlock Grid.Row = "0" Grid.Column = "4" Text = "Other Images Folde" Margin = "10" HorizontalAlignment = "Left" VerticalAlignment = "Center" />
@@ -40,8 +46,8 @@
                 <Button x:Name="extract_dimension" Content="Extract dimension" Click="Extract_Layout_Dimensions" Background = "AntiqueWhite" Width="150" Margin="0,0,10,0"/>
             </StackPanel>
             <!-- Make multiple language resources -->
-            <TextBlock Grid.Row = "0" Grid.Column = "4" Text = "Support languages" Margin = "10" HorizontalAlignment = "Left" VerticalAlignment = "Center" />
-            <StackPanel Orientation = "Horizontal">
+            <TextBlock Grid.Row = "0" Grid.Column = "4" Text = "Support languages" Margin = "10" HorizontalAlignment = "Left" VerticalAlignment = "Center" Visibility="Hidden"/>
+            <StackPanel Orientation = "Horizontal"  Visibility="Hidden">
                 <TextBlock x:Name="txtBoxName6"  Grid.Row = "0" Grid.Column = "3" Margin="10,0,10,0" Width="400" Background="PaleTurquoise"/>
                 <Button x:Name="extract_strings" Content="Extract strings" Click="Extract_Layout_Strings" Background = "AntiqueWhite" Width="150" Margin="0,0,10,0"/>
             </StackPanel>
