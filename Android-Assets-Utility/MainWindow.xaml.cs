@@ -41,6 +41,16 @@ namespace Android_Assets_Utility
             "\\mipmap-anydpi-v26"
         };
 
+        string[] drawablePath = {
+            "\\drawable-lhdpi",
+            "\\drawable-mdpi",
+            "\\drawable-hdpi",
+            "\\drawable-xhdpi",
+            "\\drawable-xxhdpi",
+            "\\drawable-xxxhdpi",
+            "\\drawable"
+        };
+
         int[] densityValue = { 72, 96, 144, 192, 48, 144 };
 
 
@@ -111,9 +121,37 @@ namespace Android_Assets_Utility
 
         private void Make_Multiple_Size_Images(object sender, RoutedEventArgs e)
         {
+            //36x36(0.75x) for low - density(ldpi)
+            //48x48(1.0x baseline) for medium - density(mdpi) 360x640 4in  16:9 ratio (~184 ppi density)
+            //72x72(1.5x) for high - density(hdpi)
+            //96x96(2.0x) for extra - high - density(xhdpi)
+            //144x144(3.0x) for extra - extra - high - density(xxhdpi)
+            //192x192(4.0x) for extra - extra - extra - high - density(xxxhdpi)
             //app/src/main/res/drawable
-            //app/src/main/res/drawable-xhdpi
+            //app/src/main/res/drawable-xhdpi        
+            string inputFolder = txtBoxName3.Text;
+            string outputFile = workspacePath + resourcePath + "\\values\\dimens.xml";
+            if (Directory.Exists(inputFolder))
+            {
+                string[] fileEntries = Directory.GetFiles(inputFolder);
+                for (int i = 0; i < fileEntries.Length; i++)
+                {
+                    string iconName = "";
+                    for (int j = 0; j < drawablePath.Length; j++)
+                    {
+                        string outputFolder = workspacePath + resourcePath + drawablePath[j];
+                        string outputPath = outputFolder + iconName;
+                        bool exists = System.IO.Directory.Exists(outputFolder);
+                        if (!exists)
+                            System.IO.Directory.CreateDirectory(outputFolder);
+                        int size = densityValue[i];
+                        CreateSingleLauncherIcon(size, size, outputPath, fileEntries[i]);
+                    }
+                }
+            }
+                
             
+
         }
 
         private void Support_Multiple_Size_Screen(object sender, RoutedEventArgs e)

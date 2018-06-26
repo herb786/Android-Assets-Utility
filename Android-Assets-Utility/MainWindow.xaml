@@ -27,12 +27,12 @@
                 <Button x:Name="make_round_launcher_icons" Content="Build icons" Click="Make_Round_Launcher_Icons" Background = "AntiqueWhite" Width="150" Margin="0,0,10,0"/>
             </StackPanel>
             <!-- Make multiple density drawable -->
-            <TextBlock Grid.Row = "0" Grid.Column = "4" Text = "Other Images Folde" Margin = "10" HorizontalAlignment = "Left" VerticalAlignment = "Center" />
+            <TextBlock Grid.Row = "0" Grid.Column = "4" Text = "Other Images Folder" Margin = "10" HorizontalAlignment = "Left" VerticalAlignment = "Center" />
             <StackPanel Orientation = "Horizontal">
                 <TextBlock x:Name="txtBoxName3"  Grid.Row = "0" Grid.Column = "3" Margin="10,0,10,0" Width="400" Background="PaleTurquoise"/>
                 <Button x:Name="make_images" Content="Build images" Click="Make_Multiple_Size_Images" Background = "AntiqueWhite" Width="150" Margin="0,0,10,0"/>
             </StackPanel>
-            <!-- Make multiple screen suport dimensions -->
+            <!-- Make multiple screen support dimensions -->
             <TextBlock Grid.Row = "0" Grid.Column = "4" Text = "Dimension" Margin = "10" HorizontalAlignment = "Left" VerticalAlignment = "Center" />
             <StackPanel Orientation = "Horizontal">
                 <TextBlock x:Name="txtBoxName4"  Grid.Row = "0" Grid.Column = "3" Margin="10,0,10,0" Width="400" Background="PaleTurquoise"/>
